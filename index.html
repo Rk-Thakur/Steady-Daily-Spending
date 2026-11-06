@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Steady: Daily Spending · Know what's safe to spend today</title>
+<meta name="description" content="Steady shows one number: how much is safe to spend today, with bills, goals and payday already counted. Private by design: no account, no bank login, nothing leaves your phone.">
+<meta name="theme-color" content="#0F2C23">
+<meta property="og:title" content="Steady: Daily Spending">
+<meta property="og:description" content="One number. No spreadsheets. Know what's safe to spend today.">
+<meta property="og:image" content="assets/icon.png">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="main.js" defer></script>
+</head>
+<body class="on-dark">
+
+<div class="progress" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/icon.png" alt="">Steady</a>
+    <nav class="nav" aria-label="Main">
+      <a class="hide-sm" href="index.html#features">Features</a>
+      <a class="hide-sm" href="index.html#how">How it works</a>
+      <a href="privacy.html">Privacy</a>
+      <a class="nav-cta" href="index.html#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+    <div class="grid-lines"></div><div class="grain"></div>
+    <div class="wrap">
+      <div>
+        <span class="pill fade-up" style="--d:.05s"><b>NEW</b> Free on iPhone and Android</span>
+        <h1>
+          <span class="w" style="--i:0">One</span> <span class="w" style="--i:1">number.</span><br>
+          <span class="nw"><span class="w hl" style="--i:2">No</span> <span class="w hl" style="--i:3">spreadsheets.</span></span>
+        </h1>
+        <p class="lead fade-up" style="--d:.55s">Steady tells you how much is safe to spend today. Bills, goals and payday are already counted, so you can just get on with your day.</p>
+        <div class="stores fade-up" style="--d:.7s">
+          <a class="store" href="https://apps.apple.com/app/idAPP_STORE_ID" aria-label="Download Steady on the App Store">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            <span><small>Download on the</small><strong>App Store</strong></span>
+          </a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=app.dailynumber.steady" aria-label="Get Steady on Google Play">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00D7FE" d="M3.6 1.6c-.3.3-.5.8-.5 1.4v18c0 .6.2 1.1.5 1.4L13.7 12z"/><path fill="#FFCE00" d="M17.1 15.4 13.7 12l3.4-3.4 4 2.3c1.1.6 1.1 1.7 0 2.3z"/><path fill="#FF3A44" d="M17.1 15.4 13.7 12 3.6 22.4c.4.4 1 .4 1.7.1z"/><path fill="#00F076" d="M17.1 8.6 5.3 1.5c-.7-.4-1.3-.3-1.7.1L13.7 12z"/></svg>
+            <span><small>Get it on</small><strong>Google Play</strong></span>
+          </a>
+        </div>
+        <p class="note fade-up" style="--d:.85s"><span>No account</span><span>No bank login</span><span>No ads</span></p>
+      </div>
+
+      <div class="phone-stage">
+        <div class="phone-glow"></div>
+        <div class="phone" role="img" aria-label="Steady's Today screen: the safe-to-spend number updates as spends are logged">
+          <div class="screen">
+            <div class="status" aria-hidden="true"><span>9:41</span><span>●●● ▮</span></div>
+            <div class="hi">Good morning <small>14 days to payday</small></div>
+            <div class="card-hero">
+              <div class="label">Safe to spend today</div>
+              <div class="num" id="demoNum">$42</div>
+              <span class="chg" id="demoChg">▲ Up $6 from yesterday</span>
+              <div class="track"><i id="demoFill"></i></div>
+            </div>
+            <div class="rows" id="demoRows">
+              <div class="row"><span class="dot">📅</span><span>Rent<small>Set aside · due in 6 days</small></span><b>$1,150</b></div>
+              <div class="row"><span class="dot">🎯</span><span>Trip To Japan<small>Goal · 48% saved</small></span><b>$960</b></div>
+              <div class="row"><span class="dot">🛒</span><span>Groceries<small>Food · Yesterday</small></span><b>−$31.20</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="float-chip c1" aria-hidden="true"><i>✓</i>Rent set aside</div>
+        <div class="float-chip c2" aria-hidden="true"><i>🎯</i>+$7 to your goal</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>One number a day</span><span>No account</span><span>No bank login</span><span>Encrypted on your phone</span><span>Bills set aside</span><span>Goals that fill themselves</span><span>No ads, no tracking</span>
+      <span>One number a day</span><span>No account</span><span>No bank login</span><span>Encrypted on your phone</span><span>Bills set aside</span><span>Goals that fill themselves</span><span>No ads, no tracking</span>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <section class="block" id="features">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Features</span>
+        <h2>Everything counted, so you don't have to</h2>
+        <p>Steady does the maths in the background and gives you one honest number every morning.</p>
+      </div>
+      <div class="bento" data-stagger>
+        <article class="card feature-big reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16c3 0 3-8 6-8s3 8 6 8 3-8 6-8"/></svg></div>
+          <h3>Safe to spend today</h3>
+          <p>One number, updated after every spend. Tap it to see how it's worked out, and why it changed since yesterday.</p>
+          <div class="mini-num" data-count="42" data-prefix="$">$42</div>
+        </article>
+        <article class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14"/><path d="M12 17h.01"/></svg></div>
+          <h3>Can I afford it?</h3>
+          <p>Check a purchase before you buy. See what it does to today and the days ahead, then log it, or wait 48 hours and decide later.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></div>
+          <h3>Bills radar</h3>
+          <p>Bills due before payday are set aside automatically, with reminders and a heads-up for big ones right after payday.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
+          <h3>Goals that fill themselves</h3>
+          <p>Pick a target and a pace. A little comes out of your number each day and lands in the goal on payday.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="3"/><path d="M7 6V4h10v2"/><circle cx="12" cy="13" r="2.5"/></svg></div>
+          <h3>Paycheck Vault</h3>
+          <p>For freelance, gig and commission pay. Big weeks fill the Vault, and it pays you a steady amount every week.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c.5-3.5 3-5.5 5.5-5.5s5 2 5.5 5.5M14 15c2.6-.5 6 .8 7 5"/></svg></div>
+          <h3>Split expenses</h3>
+          <p>Share costs with a partner, flatmates or a trip group. Simplified debts mean the fewest payments to settle up.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+          <h3>Insights</h3>
+          <p>Tag a mood, track planned vs unplanned spends, and see weekly and monthly summaries with a PDF report.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.4 8.2 8 9 4.6-.8 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>Category limits</h3>
+          <p>Optional monthly limits per category, with a gentle warning as you get close, never a lecture.</p>
+        </article>
+        <article class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+          <h3>Locked and encrypted</h3>
+          <p>An encrypted database, with an optional PIN, Face ID or fingerprint lock, and password-protected backups.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="block" id="how" style="padding-top:0">
+    <div class="wrap how">
+      <div>
+        <div class="section-head reveal">
+          <span class="kicker">How it works</span>
+          <h2>Set it up once. Glance at it daily.</h2>
+          <p>Setup takes about a minute. After that, logging a spend takes a few seconds.</p>
+        </div>
+        <ol class="steps" data-stagger>
+          <li class="reveal"><span class="n">1</span><h3>Tell Steady what you have</h3><p>The money you spend from, and when you're paid next.</p></li>
+          <li class="reveal"><span class="n">2</span><h3>Add your bills and goals</h3><p>Steady sets aside what's due before payday and what you're saving.</p></li>
+          <li class="reveal"><span class="n">3</span><h3>Spend with confidence</h3><p>The rest is spread over the days until payday. Spend less today and tomorrow's number goes up.</p></li>
+        </ol>
+      </div>
+      <div class="formula reveal" aria-label="Example: $1,240 plus $600 income, minus $1,150 bills and $102 goals, divided by 14 days, is $42 a day">
+        <div data-stagger>
+          <div class="ln reveal"><span><span class="op"></span>money you have</span><b data-count="1240" data-prefix="$">$1,240</b></div>
+          <div class="ln reveal"><span><span class="op plus">+</span>income this cycle</span><b data-count="600" data-prefix="$">$600</b></div>
+          <div class="ln reveal"><span><span class="op minus">−</span>bills before payday</span><b data-count="1150" data-prefix="$">$1,150</b></div>
+          <div class="ln reveal"><span><span class="op minus">−</span>goal set-asides</span><b data-count="102" data-prefix="$">$102</b></div>
+          <div class="ln reveal"><span><span class="op minus">÷</span>days until payday</span><b data-count="14">14</b></div>
+          <div class="ln total reveal"><span>= safe to spend today</span><b data-count="42" data-prefix="$">$42</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Try it -->
+  <section class="block" id="try" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="kicker">Try it</span>
+        <h2>What would your number be?</h2>
+        <p>Move the sliders. This is the same sum Steady does for you every day.</p>
+      </div>
+      <div class="calc reveal">
+        <div class="card controls">
+          <div class="ctl"><label for="cMoney">Money you have (and income due) <output id="oMoney">$1,840</output></label><input id="cMoney" type="range" min="0" max="6000" step="10" value="1840"></div>
+          <div class="ctl"><label for="cBills">Bills due before payday <output id="oBills">$1,150</output></label><input id="cBills" type="range" min="0" max="4000" step="10" value="1150"></div>
+          <div class="ctl"><label for="cGoals">Saving for goals <output id="oGoals">$102</output></label><input id="cGoals" type="range" min="0" max="1500" step="2" value="102"></div>
+          <div class="ctl"><label for="cDays">Days until payday <output id="oDays">14</output></label><input id="cDays" type="range" min="1" max="31" step="1" value="14"></div>
+        </div>
+        <div class="result" id="cResult" aria-live="polite">
+          <div class="label">Safe to spend today</div>
+          <div class="big" id="cBig">$42</div>
+          <p class="msg" id="cMsg">A comfortable day. Spend less and tomorrow's number goes up.</p>
+          <div class="stack" aria-hidden="true"><i class="s-bills" id="sBills"></i><i class="s-goals" id="sGoals"></i><i class="s-free" id="sFree"></i></div>
+          <div class="legend" aria-hidden="true"><span style="--c:#FFB27D">Bills</span><span style="--c:#8FD3B4">Goals</span><span style="--c:#C9F26B">Yours to spend</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="band reveal">
+        <div>
+          <div class="shield"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+          <h2>Your money stays on your phone</h2>
+          <p>Steady has no account, no server and no bank login. We can't see your data because we never have it.</p>
+          <a class="link-arrow" href="privacy.html">Read the privacy policy <span>→</span></a>
+        </div>
+        <ul class="checks" data-stagger>
+          <li class="reveal">No account or sign-up</li>
+          <li class="reveal">No bank login needed</li>
+          <li class="reveal">No ads, tracking or analytics</li>
+          <li class="reveal">Encrypted database on your device</li>
+          <li class="reveal">Backups locked with your password</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head center reveal"><span class="kicker">FAQ</span><h2>Questions, answered</h2></div>
+      <div class="faq" data-stagger>
+        <details class="reveal"><summary>Is Steady free?</summary><div class="ans"><p>Yes. Steady is free to download and use, with no ads.</p></div></details>
+        <details class="reveal"><summary>Do I need to connect my bank?</summary><div class="ans"><p>No. Steady is manual by design: you enter your balance and log spends yourself. It takes seconds, and it keeps you aware of your money.</p></div></details>
+        <details class="reveal"><summary>What happens if I overspend?</summary><div class="ans"><p>Nothing dramatic. The extra is spread evenly over the days left until payday, so each day's number drops a little.</p></div></details>
+        <details class="reveal"><summary>My income changes every week. Will it work?</summary><div class="ans"><p>Yes. Turn on the Paycheck Vault: big weeks fill it, and it pays you a steady amount each week so your number doesn't swing.</p></div></details>
+        <details class="reveal"><summary>What if I lose my phone?</summary><div class="ans"><p>Your data is only on your phone, so create an encrypted backup file from Settings › Backup &amp; export and keep it somewhere safe, like your cloud drive.</p></div></details>
+        <details class="reveal"><summary>Need more help?</summary><div class="ans"><p>See the <a href="support.html">support page</a> or email <a href="mailto:rj11231999@gmail.com">rj11231999@gmail.com</a>.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download -->
+  <section class="block" id="download" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta-box reveal">
+        <div class="blob b1"></div><div class="blob b2"></div><div class="grain"></div>
+        <img class="app-icon" src="assets/icon.png" alt="Steady app icon">
+        <h2>Get your first number in a minute</h2>
+        <p>Free on iPhone and Android. No account needed.</p>
+        <div class="stores">
+          <a class="store" href="https://apps.apple.com/app/idAPP_STORE_ID" aria-label="Download Steady on the App Store">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            <span><small>Download on the</small><strong>App Store</strong></span>
+          </a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=app.dailynumber.steady" aria-label="Get Steady on Google Play">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00D7FE" d="M3.6 1.6c-.3.3-.5.8-.5 1.4v18c0 .6.2 1.1.5 1.4L13.7 12z"/><path fill="#FFCE00" d="M17.1 15.4 13.7 12l3.4-3.4 4 2.3c1.1.6 1.1 1.7 0 2.3z"/><path fill="#FF3A44" d="M17.1 15.4 13.7 12 3.6 22.4c.4.4 1 .4 1.7.1z"/><path fill="#00F076" d="M17.1 8.6 5.3 1.5c-.7-.4-1.3-.3-1.7.1L13.7 12z"/></svg>
+            <span><small>Get it on</small><strong>Google Play</strong></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/icon.png" alt="">Steady</a>
+    <nav aria-label="Footer">
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+      <a href="mailto:rj11231999@gmail.com">Contact</a>
+    </nav>
+    <span class="copy">© 2026 Steady: Daily Spending. Made for calmer money days.</span>
+  </div>
+</footer>
+
+</body>
+</html>
